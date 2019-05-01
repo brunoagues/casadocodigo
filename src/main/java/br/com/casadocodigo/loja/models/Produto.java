@@ -20,23 +20,22 @@ public class Produto {
 	
 	//anotaçao responsavel por criar uma tabela ja relacionada
 	@ElementCollection
-	private List<Preco> precos;
+	private List<Preco> preco;
 	
-	
-	 
+
 	public List<Preco> getPreco() {
-		return precos;
+		return preco;
 	}
-	
+	public void setPreco(List<Preco> preco) {
+		this.preco = preco;
+	}
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public void setPreco(List<Preco> precos) {
-		this.precos = precos;
-	}
+
 	public String getTitulo() {
 		return titulo;
 	}

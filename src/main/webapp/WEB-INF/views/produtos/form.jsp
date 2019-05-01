@@ -27,8 +27,8 @@
 	<c:forEach items="${tipos}" var="tipoPreco" varStatus="status">
     <div>
         <label>${tipoPreco}</label>
-        <input type="text" name="precos[${status.index}].valor" />
-        <input type="hidden" name="precos[${status.index}].tipo" value="${tipoPreco}" />
+        <input type="text" name="preco[${status.index}].valor" />
+        <input type="hidden" name="preco[${status.index}].tipo" value="${tipoPreco}" />
     </div>
 </c:forEach>
     

@@ -11,8 +11,7 @@ public class Preco {
 
 	private TipoPreco tipo;
 	
-	
-	
+
 	public BigDecimal getValor() {
 		return valor;
 	}
