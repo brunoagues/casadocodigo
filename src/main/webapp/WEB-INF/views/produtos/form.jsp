@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
 
 <html>
 <head>
@@ -10,18 +12,22 @@
 </head>
 <body>
 
-<form action="/casadocodigo/produtos" method="post">
+<form:form action="${s:mvcUrl('PC#grava').build()}" method="post" commandName="produto">
     <div>
         <label>Título</label>
         <input type="text" name="titulo" />
+        <form:errors path="titulo" />
     </div>
     <div>
         <label>Descrição</label>
         <textarea rows="10" cols="20" name="descricao"></textarea>
+        <form:errors path="descricao" />
+        
     </div>
     <div>
         <label>Páginassss</label>
         <input type="text" name="paginas" />
+         <form:errors path="paginas" />
     </div>
     
 	<c:forEach items="${tipos}" var="tipoPreco" varStatus="status">
@@ -33,7 +39,7 @@
 </c:forEach>
     
     <button type="submit">Cadastrar</button>
-</form>
+</form:form>
 
 
 </body>
