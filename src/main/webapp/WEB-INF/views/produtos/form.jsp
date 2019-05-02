@@ -20,21 +20,25 @@
     </div>
     <div>
         <label>Descrição</label>
-        <textarea rows="10" cols="20" name="descricao"></textarea>
+        <form:textarea rows="10" cols="20" path="descricao"/>
         <form:errors path="descricao" />
         
     </div>
     <div>
         <label>Páginassss</label>
-        <input type="text" name="paginas" />
+        <form:input path="paginas" />
          <form:errors path="paginas" />
     </div>
-    
+     <div>
+        <label>Data de Lançamento</label>
+        <form:input path="dataLancamento" />
+        <form:errors path="dataLancamento" />
+    </div>
 	<c:forEach items="${tipos}" var="tipoPreco" varStatus="status">
     <div>
         <label>${tipoPreco}</label>
-        <input type="text" name="preco[${status.index}].valor" />
-        <input type="hidden" name="preco[${status.index}].tipo" value="${tipoPreco}" />
+        <form:input path="preco[${status.index}].valor" />
+        <form:hidden path="preco[${status.index}].tipo" value="${tipoPreco}" />
     </div>
 </c:forEach>
     
